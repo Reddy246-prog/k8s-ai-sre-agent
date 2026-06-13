@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: db-fail-demo
+spec:
+  containers:
+  - name: app
+    image: busybox
+    command:
+    - sh
+    - -c
+    - |
+      echo "Database connection failed"
+      echo "Application startup failed"
+      exit 1
